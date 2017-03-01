@@ -160,8 +160,6 @@
         var
           col = $( this ).attr('data-color'),
           name = $( this ).attr('data-name'),
-          // Select all button in document with same data target to keep them synconized
-          $button = $('.'+ns+'-button[data-target="' + $( this ).closest( '.'+ns+'-button' ).attr('data-target') + '"]'),
           $bubble = $( this ).closest( '.'+ns+'-bubble' );
 
         // console.log('.'+ns+'-button [data-target="' + $( this ).closest( '.'+ns+'-button' ).attr('data-target') + '"]');
@@ -176,7 +174,7 @@
           $(this).addClass('active');
           $button.css('background', col);
         }
-        $( '[name="'+$button.attr('data-target')+'"]' ).val( name );
+        $el.val( name );
       })['insert'+plugin.settings.insert]( $el );
 
       // Upside / downside, default is upside
